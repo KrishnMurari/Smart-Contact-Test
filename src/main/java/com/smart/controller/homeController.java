@@ -41,6 +41,8 @@ public class homeController {
     
     @GetMapping("/signup")
     public String signup(Model model) {
+
+		// Systen.out.println("Hello World");
     	
     	model.addAttribute("user",new User());
         return "signup";
