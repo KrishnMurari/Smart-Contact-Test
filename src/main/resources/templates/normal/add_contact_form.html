@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     
+    
+	<title>This is home page</title>
+</head>
+<body>
+	<section >
+		
+	  <div class="card mr-3 ml-3">
+		  <div class="card-body">
+			  <h1 class="text-center"> Add Contact
+				  
+			  </h1>
+			  
+			  <div class="container-fluid mt-1">
+				  <div class="row">
+					  <div class="col-md-8 offset-md-2">
+						  
+						  <form action="#" th:object="${contact}"
+						  enctype="multipart/form-data"
+						  method="POST"
+						  th:action="@{/user/process-contact}"
+						  class="mt-2">
+						  
+						  <div class="input-group">
+							  
+							  <div class="input-group-prepend">
+								  <div class="input-group-text">
+									  
+									 <span> <i class="fa fa-plus"></i></span>
+								  </div>
+							  </div>
+							  
+							  <input required type="text" id="firstname" name="name" placeholder="Enter name here" class="form-control"/>
+						       
+						  </div>
+						  
+						  
+						   <div class="input-group mt-3">
+							  
+							  <div class="input-group-prepend">
+								  <div class="input-group-text">
+									 <span> 
+									  <i class="fas fa-user-alt"></i></span>
+								  </div>
+							  </div>
+							  
+							  <input required type="text" id="Secondname" name="secName" placeholder="Enter Second name here" class="form-control"/>
+						       
+						  </div>
+						  
+						  
+						   
+						   <div class="input-group mt-3">
+							  
+							  <div class="input-group-prepend">
+								  <div class="input-group-text">
+									  
+									 <span> <i class="fa fa-phone"></i></span>
+								  </div>
+							  </div>
+							  
+							  <input required type="text" id="phone" name="phone" placeholder="Enter your phone number" class="form-control"/>
+						       
+						  </div>
+						  
+						  
+						   
+						   <div class="input-group mt-3">
+							  
+							  <div class="input-group-prepend">
+								  <div class="input-group-text">
+									  
+									  @
+								  </div>
+							  </div>
+							  
+							  <input required type="text" id="email" name="email" placeholder="Enter your Email here" class="form-control"/>
+						       
+						  </div>
+						  
+						  
+						   
+						   <div class="input-group mt-3">
+							  
+							  <div class="input-group-prepend">
+								  <div class="input-group-text">
+									  
+									 <span> <i class="fa fa-briefcase"></i></span>
+								  </div>
+							  </div>
+							  
+							  <input required type="text" id="work" name="work" placeholder="Enter your work here" class="form-control"/>
+						       
+						  </div>
+						  
+						  
+						   
+						   <div class="input-group mt-3 width-620">
+							  
+							 <textarea id="mytextarea" placeholder="Enter contact description" name="description"  class="form-control" rows="10"></textarea>     
+						  </div>
+						  
+						  <div class="custom-file mt-3">
+							  <input type="file" name="profileImage" />
+						  </div>
+						  
+						  <div class="container text-center mt-3">
+							  <button class="btn btn-outline-primary"> Save Contact</button>
+						  </div>
+						  
+						  
+						  
+						  
+						  </form>
+						  
+					  </div>
+				  </div>
+			  </div>
+		  </div>
+	  </div>
+	   <script src="https://cdn.tiny.cloud/1/qw3837ht787p9rp4wkh6qdabrb9mfuw1tzpcv5whbl1on6cw/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+
+<!-- Place the following <script> and <textarea> tags your HTML's <body> -->
+<script>
+  tinymce.init({
+    selector: 'textarea',
+    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage advtemplate ai mentions tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
+    toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+    tinycomments_mode: 'embedded',
+    tinycomments_author: 'Author name',
+    mergetags_list: [
+      { value: 'First.Name', title: 'First Name' },
+      { value: 'Email', title: 'Email' },
+    ],
+    ai_request: (request, respondWith) => respondWith.string(() => Promise.reject("See docs to implement AI Assistant")),
+  });
+</script>
+	 
+	  
+	</section>
+	
+</body>
+</html>

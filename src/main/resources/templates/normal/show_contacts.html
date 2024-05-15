@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title>This is home page</title>
+</head>
+<body>
+	<section >
+		
+	 <div class="card mr-3 ml-3">
+		 <div class="card-body">
+			 <h1 class="text-center ">Your contacts</h1>
+								 
+				 <table class="table">
+					  <thead>
+					    <tr>
+					      <th scope="col">Id</th>
+					      <th scope="col">Name</th>
+					      <th scope="col">Email</th>
+					      <th scope="col">Phone</th>
+					      <th scope="col">Action</th>
+					    </tr>
+					  </thead>
+					  
+					  <tbody>
+					   
+					   
+					    <tr th:each="c : ${contacts}">
+					      <th scope="row" th:text="${'SCM2020'+c.cId}">1</th>
+					      <td >
+							  <img src="" class="my_profile" th:src="@{'/img/'+${c.image}}" alt="" />
+							  <span th:text="${c.name}">
+							  
+						  </span></td>
+						  
+					      <td >
+							  <a href="" th:href="@{'/user/'+${c.cId}+'/contact'}">
+								
+								  <span th:text="${c.email}">
+									  
+								  </span>
+							  </a>
+						  </td>
+						  
+					      <td th:text="${c.phone}">@mdo</td>
+					       <td>
+                          
+                          
+                          <a th:href="@{'/user/delete/'+ ${c.cId}}"  class="btn btn-danger btn-sm">
+							  <span><i class="fa-solid fa-trash"></i></span>
+						  </a>
+						   
+						   <a class="btn btn-success btn-sm">
+							  <span><i class="fa-solid fa-eye"></i></span>
+						  </a>
+                          
+                          
+                          
+                          </td>
+					    </tr>
+					   
+					  </tbody>
+				</table>
+				
+				
+				
+		 </div>
+	 </div>
+	
+	
+	
+	</section>
+	
+</body>
+</html>
